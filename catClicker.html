@@ -3,15 +3,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            var count = 0;
-            $("#image").click(function(){
-                $('#counter').text(++count)
+            //initialize cat1
+            var cat1 = new Cat('test1', 'cat1.jpg');
+            $('#cat1>#name').text( cat1.name );
+            $('#cat1>#image').attr('src', cat1.url );
+            $('#cat1>#counter').text( cat1.counter );
+            
+            //initialize cat2
+            var cat2 = new Cat('test2', 'cat2.jpg');
+            $('#cat2>#name').text( cat2.name );
+            $('#cat2>#image').attr('src', cat2.url );
+            $('#cat2>#counter').text( cat2.counter );
+        
+        
+            $("#cat1>#image").click(function(){
+                cat1.clicked();
+                $('#cat1>#counter').text( cat1.counter );
+            });
+            $("#cat2>#image").click(function(){
+                cat2.clicked();
+                $('#cat2>#counter').text( cat2.counter );
             });
         });
+    
+    var Cat = function(name, url){
+        this.name = name;
+        this.url = url;
+        this.counter = 0;
+    };
+    
+    Cat.prototype.clicked = function(){
+        this.counter++;
+    };
+    
     </script>
+    
+    
 </head>
 <body>
-    <img id="image" src="cat1.jpg" />
-    <div id="counter">0</div>
+    <div id="cat1">
+        <p id="name">___</p>
+        <img id="image" />
+        <p id="counter">-1</p>
+    </div>
+    
+    <div id="cat2" style='float:left'>
+        <p id="name">___</p>
+        <img id="image" />
+        <p id="counter">-1</p>
+    </div>
 </body>
 </html>
