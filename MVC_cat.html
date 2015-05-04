@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MVC CatClicker</title>
+</head>
+<body>
+    <div style="width:20%; float:left">
+        <ul id='catList'>
+        </ul>
+    </div>
+    
+    <div id="cat" style="float:left" >
+        <p id="name"></p>
+        <img id="image" style="width:200px; height:100px;"/>
+        <p id="counter"></p>
+    </div>
+    
+    <div style="clear:both"></div>
+    
+    <button id="adminButton" type="button">Admin</button>
+    <div id="admin" style="display:none" >
+        <form>
+            Name: <input id="catName" type="text" ><br>
+            Img Url: <input id="catUrl" type="text" ><br>
+            Count: <input id="catCount" type="text" ><br>
+            <input type="submit" >
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="MVC_cat.js"></script>
+</body>
+</html>
+
+
+
+    
